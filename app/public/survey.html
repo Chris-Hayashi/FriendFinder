@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <script src="../data/friends.js"></script>
     </head>
 
     <body>
-        <form>
+        <form action="/api/friends" method="post">
             Name (Required) <br>
-            <input type="text" name="name"><br>
+            <input type="text" id="name"><br>
             Link to Photo Image (Required) <br>
-            <input type="text" name="photo"><br>
+            <input type="text" id="photo"><br>
 
             <br>
             <hr>
@@ -136,7 +141,72 @@
             <br>
             <br>
 
-            <input type="submit" value="Submit">
+            <!-- <input type="submit" id="submit" value="Submit"> -->
+
+            
+            <div class="container">
+                <!-- Trigger the modal with a button -->
+                <input type="submit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" id="submit" value="Submit">
+              
+                <!-- Modal -->
+                <div class="modal fade"  id="myModal" role="dialog">
+                  <div class="modal-dialog modal-sm">
+                  
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Best Match</h4>
+                      </div>
+                      <div class="modal-body">
+                        <h2 id="modal-name"></h2>
+                        <img style="max-width: 100%; height: auto"  src="" id="modal-photo">
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                
+              </div>
         </form>
+
+        <script type="text/javascript">
+            // $("#modal-display").hide();
+
+            $("#submit").on("click", function(event) {
+                event.preventDefault();
+
+                var user = {
+                    "name" : $("#name").val(),
+                    "photo" : $("#photo").val(),
+                    "scores" : [
+                        $("#q1").val(),
+                        $("#q2").val(),
+                        $("#q3").val(),
+                        $("#q4").val(),
+                        $("#q5").val(),
+                        $("#q6").val(),
+                        $("#q7").val(),
+                        $("#q8").val(),
+                        $("#q9").val(),
+                        $("#q10").val()
+                    ]
+                };
+
+                // console.log(user);
+
+                $.post("/api/friends", user, function (data) {
+                    // console.log("survey: " + data);
+                    console.log("Best Match Name: " + data.name);
+                    $("#modal-name").text(data.name);
+                    $("#modal-photo").attr("src", data.photo);
+
+                    // $("#myModal").modal("toggle");
+                });
+            });
+        </script>
     </body>
 </html>
