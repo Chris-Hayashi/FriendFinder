@@ -1,10 +1,44 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     </head>
 
     <body>
-        
+        <img src="https://s3-us-west-1.amazonaws.com/companies.comparably.com/122109_profile_friendfinder-networks.png?lastUpdate=Thu%20Apr%2025%202019%2017%3A27%3A12%20GMT+0000%20%28UTC%29" style="width: 100%; height: auto; transform: translateY(-50px);">
+
+        <div class="container" style="transform: translateY(-75px);">
+            <h1>Instructions</h1>
+            <div class="panel panel-default" style="font-size: 2.5rem; line-height: 0.7;">
+                <div class="panel-body">Answer a few basic questions.</div>
+                <div class="panel-body">Then find the friend with the greatest compatability.</div>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-lg">
+                <a href="/survey" style="color: white;">
+                    <img src="data:image/png;base64,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"
+                        style="width: 5rem; background-color: white">
+
+                        &nbsp; Go to Survey
+                </a>
+            </button>
+
+            <br>
+            <br>
+            
+            <div>
+                <a href="/api/friends">
+                    API Friends List
+                </a>
+                &nbsp;|&nbsp;
+                <a href="https://github.com/Chris-Hayashi/FriendFinder">Github Repo</a>
+            </div>
+        </div>
+
     </body>
 </html>
