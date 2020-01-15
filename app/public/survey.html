@@ -140,13 +140,10 @@
 
             <br>
             <br>
-
-            <!-- <input type="submit" id="submit" value="Submit"> -->
-
             
             <div class="container">
                 <!-- Trigger the modal with a button -->
-                <input type="submit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" id="submit" value="Submit">
+                <input type="submit" class="btn btn-info btn-lg" id="submit" value="Submit">
               
                 <!-- Modal -->
                 <div class="modal fade"  id="myModal" role="dialog">
@@ -174,38 +171,46 @@
         </form>
 
         <script type="text/javascript">
-            // $("#modal-display").hide();
 
             $("#submit").on("click", function(event) {
                 event.preventDefault();
 
-                var user = {
-                    "name" : $("#name").val(),
-                    "photo" : $("#photo").val(),
-                    "scores" : [
-                        $("#q1").val(),
-                        $("#q2").val(),
-                        $("#q3").val(),
-                        $("#q4").val(),
-                        $("#q5").val(),
-                        $("#q6").val(),
-                        $("#q7").val(),
-                        $("#q8").val(),
-                        $("#q9").val(),
-                        $("#q10").val()
-                    ]
-                };
+                var valid = true;
 
-                // console.log(user);
+                if ($("#name").val() === "" || $("#photo").val() === "") {
+                    valid = false;
+                    alert("Name and photo are required");
 
-                $.post("/api/friends", user, function (data) {
-                    // console.log("survey: " + data);
-                    console.log("Best Match Name: " + data.name);
-                    $("#modal-name").text(data.name);
-                    $("#modal-photo").attr("src", data.photo);
+                } else if ($("#q1").val() === "" || $("#q2").val() === "" || $("#q3").val() === "" || $("#q4").val() === "" || $("#q5").val() === "" || $("#q6").val() === "" || $("#q7").val() === "" || $("#q8").val() === "" || $("#q9").val() === "" || $("#q10").val() === "") {
+                    valid = false;
+                    alert("Please answer all questions");
 
-                    // $("#myModal").modal("toggle");
-                });
+                } else {
+                    var user = {
+                        "name" : $("#name").val(),
+                        "photo" : $("#photo").val(),
+                        "scores" : [
+                            $("#q1").val(),
+                            $("#q2").val(),
+                            $("#q3").val(),
+                            $("#q4").val(),
+                            $("#q5").val(),
+                            $("#q6").val(),
+                            $("#q7").val(),
+                            $("#q8").val(),
+                            $("#q9").val(),
+                            $("#q10").val()
+                        ]
+                    };
+    
+                    $.post("/api/friends", user, function (data) {
+                        console.log("Best Match Name: " + data.name);
+                        $("#modal-name").text(data.name);
+                        $("#modal-photo").attr("src", data.photo);
+    
+                        $("#myModal").modal("toggle");
+                    });
+                }
             });
         </script>
     </body>
