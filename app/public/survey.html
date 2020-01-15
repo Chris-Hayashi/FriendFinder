@@ -11,19 +11,21 @@
 
     <body style="background-color: orangered;">
         <form action="/api/friends" method="post" style="margin: 25px 200px 50px 200px; padding: 25px 50px 25px 50px; border-style: solid; border-color: orangered; background-color: white;">
-            <h1>Survey Questions</h1>
+            
+            <h1 style="position: absolute; width: 100%; text-align: center; position: relative;">Survey Questions</h1>
 
             <br>
 
+            <h2>About You</h2>
             Name (Required) <br>
-            <input type="text" id="name"><br>
+            <input type="text" id="name" style="width: 90%;"><br><br>
             Link to Photo Image (Required) <br>
-            <input type="text" id="photo"><br>
+            <input type="text" id="photo" style="width: 90%;"><br>
 
             <br>
             <hr>
 
-            <h2>Your mind is always buzzing with unexplored ideas and plans.</h2>
+            <h3>Your mind is always buzzing with unexplored ideas and plans.</h3>
             <select class="chosen-select" id="q1">
                 <option></option>
                 <option value="1">1 (Strongly Disagree)</option>
@@ -35,7 +37,7 @@
 
             <br>
 
-            <h2>Generally speaking, you rely more on your experience than your imagination.</h2>
+            <h3>Generally speaking, you rely more on your experience than your imagination.</h3>
             <select class="chosen-select" id="q2">
                 <option></option>
                 <option value="1">1 (Strongly Disagree)</option>
@@ -47,7 +49,7 @@
 
             <br>
 
-            <h2>You find it easy to stay relaxed and focused even when there is some pressure.</h2>
+            <h3>You find it easy to stay relaxed and focused even when there is some pressure.</h3>
             <select class="chosen-select" id="q3">
                 <option></option>
                 <option value="1">1 (Strongly Disagree)</option>
@@ -59,7 +61,7 @@
 
             <br>
 
-            <h2>You rarely do something just out of sheer curiosity.</h2>
+            <h3>You rarely do something just out of sheer curiosity.</h3>
             <select class="chosen-select" id="q4">
                 <option></option>
                 <option value="1">1 (Strongly Disagree)</option>
@@ -71,7 +73,7 @@
 
             <br>
 
-            <h2>People can rarely upset you.</h2>
+            <h3>People can rarely upset you.</h3>
             <select class="chosen-select" id="q5">
                 <option></option>
                 <option value="1">1 (Strongly Disagree)</option>
@@ -83,7 +85,7 @@
 
             <br>
 
-            <h2>It is often difficult for you to relate to other people’s feelings.</h2>
+            <h3>It is often difficult for you to relate to other people’s feelings.</h3>
             <select class="chosen-select" id="q6">
                 <option></option>
                 <option value="1">1 (Strongly Disagree)</option>
@@ -95,7 +97,7 @@
 
             <br>
 
-            <h2>In a discussion, truth should be more important than people’s sensitivities.</h2>
+            <h3>In a discussion, truth should be more important than people’s sensitivities.</h3>
             <select class="chosen-select" id="q7">
                 <option></option>
                 <option value="1">1 (Strongly Disagree)</option>
@@ -107,7 +109,7 @@
 
             <br>
 
-            <h2>You rarely get carried away by fantasies and ideas.</h2>
+            <h3>You rarely get carried away by fantasies and ideas.</h3>
             <select class="chosen-select" id="q8">
                 <option></option>
                 <option value="1">1 (Strongly Disagree)</option>
@@ -119,7 +121,7 @@
 
             <br>
 
-            <h2>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h2>
+            <h3>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h3>
             <select class="chosen-select" id="q9">
                 <option></option>
                 <option value="1">1 (Strongly Disagree)</option>
@@ -131,7 +133,7 @@
 
             <br>
 
-            <h2>You feel more energetic after spending time with a group of people.</h2>
+            <h3>You feel more energetic after spending time with a group of people.</h3>
             <select class="chosen-select" id="q10">
                 <option></option>
                 <option value="1">1 (Strongly Disagree)</option>
@@ -159,7 +161,7 @@
                         <h4 class="modal-title">Best Match</h4>
                       </div>
                       <div class="modal-body">
-                        <h2 id="modal-name"></h2>
+                        <h3 id="modal-name"></h3>
                         <img style="max-width: 100%; height: auto"  src="" id="modal-photo">
                       </div>
                       <div class="modal-footer">
