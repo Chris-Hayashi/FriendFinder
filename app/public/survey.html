@@ -27,7 +27,7 @@
 
             <h3>Your mind is always buzzing with unexplored ideas and plans.</h3>
             <select class="chosen-select" id="q1">
-                <option></option>
+                <option value="" selected>Select an option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -39,7 +39,7 @@
 
             <h3>Generally speaking, you rely more on your experience than your imagination.</h3>
             <select class="chosen-select" id="q2">
-                <option></option>
+                <option value="" selected>Select an option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -51,7 +51,7 @@
 
             <h3>You find it easy to stay relaxed and focused even when there is some pressure.</h3>
             <select class="chosen-select" id="q3">
-                <option></option>
+                <option value="" selected>Select an option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -63,7 +63,7 @@
 
             <h3>You rarely do something just out of sheer curiosity.</h3>
             <select class="chosen-select" id="q4">
-                <option></option>
+                <option value="" selected>Select an option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -75,7 +75,7 @@
 
             <h3>People can rarely upset you.</h3>
             <select class="chosen-select" id="q5">
-                <option></option>
+                <option value="" selected>Select an option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -87,7 +87,7 @@
 
             <h3>It is often difficult for you to relate to other people’s feelings.</h3>
             <select class="chosen-select" id="q6">
-                <option></option>
+                <option value="" selected>Select an option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -99,7 +99,7 @@
 
             <h3>In a discussion, truth should be more important than people’s sensitivities.</h3>
             <select class="chosen-select" id="q7">
-                <option></option>
+                <option value="" selected>Select an option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -111,7 +111,7 @@
 
             <h3>You rarely get carried away by fantasies and ideas.</h3>
             <select class="chosen-select" id="q8">
-                <option></option>
+                <option value="" selected>Select an option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -123,7 +123,7 @@
 
             <h3>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h3>
             <select class="chosen-select" id="q9">
-                <option></option>
+                <option value="" selected>Select an option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -135,7 +135,7 @@
 
             <h3>You feel more energetic after spending time with a group of people.</h3>
             <select class="chosen-select" id="q10">
-                <option></option>
+                <option value="" selected>Select an option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -209,7 +209,6 @@
                     };
     
                     $.post("/api/friends", user, function (data) {
-                        console.log("Best Match Name: " + data.name);
                         $("#modal-name").text(data.name);
                         $("#modal-photo").attr("src", data.photo);
     
